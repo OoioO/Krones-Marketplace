@@ -11,9 +11,20 @@ questions:
   type: string
   label: Ingress Endpoint DNS
   group: "Ingress Configuration"
+- variable: persistence.storage
+  default: "4Gi"
+  type: string
+  label: Storage size
+  group: "Storage Configuration"
 - variable: persistence.claimName
   default: "node-red-3d-claimdata"
   description: "Enter a valid name for the pvc"
   type: string
   label: Storage name
+  group: "Storage Configuration"
+- variable: persistence.storageClassName
+  default: "Longhorn"
+  description: "Enter a valid name for the class"
+  type: string
+  label: Storage class
   group: "Storage Configuration"
