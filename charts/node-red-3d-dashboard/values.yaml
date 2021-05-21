@@ -11,17 +11,17 @@ image:
   repository: albird/node-red
   tag: latest
 imagePullSecrets: []
-#ingress:
-#  annotations: {}
-#  enabled: true
-#  hosts:
-#    - host: 
-#      paths:
-#        - backend:
-#             serviceName: 
-#           servicePort: 1880
-#          path: /
-#  tls: []
+ingress:
+  annotations: {}
+  enabled: true
+  hosts:
+    - host:
+      paths:
+        - backend:
+            serviceName:
+            servicePort: 1880
+          path: /
+  tls: []
 
 volumeExists: false
 skipuninstall: true

@@ -11,6 +11,12 @@ questions:
   type: string
   label: Ingress Endpoint DNS
   group: "Ingress Configuration"
+- variable: ingress.serviceName
+  default: ""
+  description: "Enter the DNS name for the ingress endpoint. Leave the default to automatically generate a valid DNS name."
+  type: string
+  label: Ingress Endpoint DNS
+  group: "Ingress Configuration"
 - variable: persistence.storage
   default: "4Gi"
   type: string
