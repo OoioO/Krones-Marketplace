@@ -8,30 +8,30 @@ fullnameOverride: ''
 
 image:
   pullPolicy: Always
-  repository: albird/node-red-krones-edition
+  repository: albird/node-red
   tag: latest
 imagePullSecrets: []
-ingress:
-  annotations: {}
-  enabled: true
-  hosts:
-    - host: 
-      paths:
-        - backend:
-            serviceName: 
-            servicePort: 1880
-          path: /
-  tls: []
+#ingress:
+#  annotations: {}
+#  enabled: true
+#  hosts:
+#    - host: 
+#      paths:
+#        - backend:
+#             serviceName: 
+#           servicePort: 1880
+#          path: /
+#  tls: []
 
 volumeExists: false
 skipuninstall: true
 persistence:
-  claimName: node-red-3d-claimdata
+  #claimName: node-red-3d-claimdata
   volumeName: node-red-3d-volume
   accessModes:
     - ReadWriteOnce
-  storageClassName: longhorn
-  storage: 3Gi
+  #storageClassName: longhorn
+  #storage: 3Gi
 
 
 nameOverride: ''
