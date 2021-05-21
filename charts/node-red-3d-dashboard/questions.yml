@@ -11,3 +11,9 @@ questions:
   type: string
   label: Ingress Endpoint DNS
   group: "Ingress Configuration"
+- variable: persistence.claimName
+  default: "node-red-3d-claimdata"
+  description: "Enter a valid name for the pvc"
+  type: string
+  label: Storage name
+  group: "Storage Configuration"
