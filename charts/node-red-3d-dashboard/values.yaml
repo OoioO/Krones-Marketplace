@@ -27,7 +27,7 @@ volumeExists: false
 skipuninstall: false
 persistence:
   claimName: 
-  volumeName: node-red-3d-volume
+  volumeName: node-red-threejs-volume
   accessModes:
     - ReadWriteOnce
   storageClassName: 

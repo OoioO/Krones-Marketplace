@@ -17,7 +17,7 @@ questions:
   label: Storage size
   group: "Storage Configuration"
 - variable: persistence.claimName
-  default: "node-red-3d-claimdata"
+  default: "node-red-threejs-claimdata"
   description: "Enter a valid name for the pvc"
   type: string
   label: Storage name
