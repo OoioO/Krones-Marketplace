@@ -13,12 +13,12 @@ image:
 imagePullSecrets: []
 ingress:
   annotations: {}
-  enabled: true
+  enabled:
   hosts:
     - host:
       paths:
         - backend:
-            serviceName: ingress.host
+            serviceName: 
             servicePort: 1880
           path: /
   tls: []
@@ -26,12 +26,12 @@ ingress:
 volumeExists: false
 skipuninstall: false
 persistence:
-  #claimName: node-red-3d-claimdata
+  claimName: 
   volumeName: node-red-3d-volume
   accessModes:
     - ReadWriteOnce
-  #storageClassName: longhorn
-  #storage: 3Gi
+  storageClassName: 
+  storage:
 
 
 nameOverride: ''

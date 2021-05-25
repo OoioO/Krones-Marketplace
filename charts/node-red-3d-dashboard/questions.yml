@@ -6,13 +6,7 @@ questions:
   type: boolean
   group: "Ingress Configuration"
 - variable: ingress.host
-  default: ""
-  description: "Enter the DNS name for the ingress endpoint. Leave the default to automatically generate a valid DNS name."
-  type: string
-  label: Ingress Endpoint DNS
-  group: "Ingress Configuration"
-- variable: ingress.serviceName
-  default: ""
+  default: "nodered.albert-hahn-apply.com "
   description: "Enter the DNS name for the ingress endpoint. Leave the default to automatically generate a valid DNS name."
   type: string
   label: Ingress Endpoint DNS
@@ -29,7 +23,7 @@ questions:
   label: Storage name
   group: "Storage Configuration"
 - variable: persistence.storageClassName
-  default: "Longhorn"
+  default: "longhorn"
   description: "Enter a valid name for the class"
   type: string
   label: Storage class
