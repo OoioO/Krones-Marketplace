@@ -18,7 +18,7 @@ ingress:
     - host:
       paths:
         - backend:
-            serviceName:
+            serviceName: ingress.host
             servicePort: 1880
           path: /
   tls: []
