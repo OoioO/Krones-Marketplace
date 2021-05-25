@@ -24,7 +24,7 @@ ingress:
   tls: []
 
 volumeExists: false
-skipuninstall: true
+skipuninstall: false
 persistence:
   #claimName: node-red-3d-claimdata
   volumeName: node-red-3d-volume
