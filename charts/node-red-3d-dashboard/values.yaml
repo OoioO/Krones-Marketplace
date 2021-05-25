@@ -26,8 +26,7 @@ ingress:
 volumeExists: false
 skipuninstall: false
 persistence:
-  claimName: 
-  volumeName: node-red-threejs-volume
+  claimName:
   accessModes:
     - ReadWriteOnce
   storageClassName: 

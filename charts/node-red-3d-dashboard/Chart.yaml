@@ -3,5 +3,5 @@ name: node-red-3d-dashboard
 description: Application for visualizing 3D data in a web interface provided through node-red
 type: application
 icon: https://alberthahn.github.io/node-red/img/node-red-logo-threejs.png
-version: 2.0.3
+version: 2.0.4
 appVersion: 0.1.0
