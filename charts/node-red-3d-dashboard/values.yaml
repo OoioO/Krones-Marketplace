@@ -8,7 +8,7 @@ fullnameOverride: ''
 
 image:
   pullPolicy: Always
-  repository: albird/node-red
+  repository: albird/node-red-krones-edition
   tag: latest
 imagePullSecrets: []
 ingress:

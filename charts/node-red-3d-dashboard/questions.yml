@@ -1,6 +1,6 @@
 questions:
 - variable: ingress.enabled
-  default: "false"
+  default: "true"
   description: "Create an ingress endpoint for this app"
   label: Enable Ingress
   type: boolean
