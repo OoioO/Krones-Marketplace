@@ -15,10 +15,10 @@ ingress:
   annotations: {}
   enabled:
   hosts:
-    - host:
+    - host: nodered.albert-hahn-apply.com 
       paths:
         - backend:
-            serviceName: 
+            serviceName: nodered.albert-hahn-apply.com 
             servicePort: 1880
           path: /
   tls: []
@@ -26,11 +26,11 @@ ingress:
 volumeExists: false
 skipuninstall: false
 persistence:
-  claimName:
+  claimName: node-red-threejs-claimdata
   accessModes:
     - ReadWriteOnce
-  storageClassName: 
-  storage:
+  storageClassName: longhorn
+  storage: 4Gi
 
 
 nameOverride: ''
