@@ -27,6 +27,7 @@ volumeExists: false
 skipuninstall: false
 persistence:
   claimName: node-red-threejs-claimdata
+  volumeName: node-red-threejs-volume
   accessModes:
     - ReadWriteOnce
   storageClassName: longhorn
