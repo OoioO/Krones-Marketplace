@@ -14,7 +14,7 @@ imagePullSecrets: []
 ingress:
   annotations: {}
   enabled:
-  host: nodered.albert-hahn-apply.com
+  host: tt.albert-hahn-apply.com
   paths:
     - path: /
   tls: []
