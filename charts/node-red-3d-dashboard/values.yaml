@@ -8,19 +8,16 @@ fullnameOverride: ''
 
 image:
   pullPolicy: Always
-  #repository: albird/node-red-krones-edition
-  #tag: latest
+  repository: albird/node-red-krones-edition
+  tag: latest
 imagePullSecrets: []
 ingress:
   annotations: {}
   enabled:
   hosts:
-    #- host: nodered.albert-hahn-apply.com 
+    - host: nodered.albert-hahn-apply.com
       paths:
-        - backend:
-            #serviceName: nodered.albert-hahn-apply.com
-            servicePort: 1880
-          path: /
+        - path: /
   tls: []
 
 volumeExists: false
@@ -31,7 +28,7 @@ persistence:
   accessModes:
     - ReadWriteOnce
   #storageClassName: longhorn
-  #storage: 4Gi
+  storage: 4Gi
 
 
 nameOverride: ''
