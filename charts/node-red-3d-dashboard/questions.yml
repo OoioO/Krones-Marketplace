@@ -5,7 +5,7 @@ questions:
   label: Enable Ingress
   type: boolean
   group: "Ingress Configuration"
-- variable: ingress.hosts[0].host
+- variable: ingress.host
   default: "nodered.albert-hahn-apply.com "
   description: "Enter the DNS name for the ingress endpoint. Leave the default to automatically generate a valid DNS name."
   type: string
