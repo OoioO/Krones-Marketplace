@@ -14,16 +14,15 @@ imagePullSecrets: []
 ingress:
   annotations: {}
   enabled:
-  hosts:
-    - host: nodered.albert-hahn-apply.com
-      paths:
-        - path: /
+  host: nodered.albert-hahn-apply.com
+  paths:
+    - path: /
   tls: []
 
 volumeExists: false
 skipuninstall: false
 persistence:
-  #claimName: node-red-threejs-claimdata
+  claimName: node-red-threejs-claimdata
   volumeName: node-red-threejs-volume
   accessModes:
     - ReadWriteOnce
