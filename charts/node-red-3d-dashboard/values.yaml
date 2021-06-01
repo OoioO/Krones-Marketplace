@@ -15,7 +15,7 @@ ingress:
   annotations: {}
   enabled:
   hosts:
-    - host: nodered.albert-hahn-apply.com 
+    #- host: nodered.albert-hahn-apply.com 
       paths:
         - backend:
             #serviceName: nodered.albert-hahn-apply.com
