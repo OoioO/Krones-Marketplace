@@ -2,7 +2,7 @@ questions:
 - variable: image.repository
   default: "albird/node-red-krones-edition"
   description: "Choose your node-red-version"
-  type: string
+  type: enum
   options:
     - "albird/node-red-krones-edition"
     - "albird/node-red"
