@@ -26,7 +26,6 @@ ingress:
     - host: ""
       paths:
         - path: /
-          pathType: ImplementationSpecific
   tls: []
 
 volumeExists: false
