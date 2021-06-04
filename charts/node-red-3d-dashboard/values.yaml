@@ -11,12 +11,22 @@ image:
   repository: albird/node-red-krones-edition
   tag: latest
 imagePullSecrets: []
+#ingress:
+#  annotations: {}
+#  enabled:
+#  host: tt.albert-hahn-apply.com
+#  paths:
+#    - path: /
+#  tls: []
+
 ingress:
   annotations: {}
   enabled:
-  host: tt.albert-hahn-apply.com
-  paths:
-    - path: /
+  hosts:
+    - host: ""
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
   tls: []
 
 volumeExists: false
