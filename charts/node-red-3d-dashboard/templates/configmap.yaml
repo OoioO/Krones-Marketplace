@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ .Release.Name }}-configmap
+  name: {{ include "node-red-3d-dashboard.fullname" . }}-configmap
 data:
   custom-samples.json" |-
 {{ .Files.Get "flows.json" | indent 4 }}

@@ -31,7 +31,7 @@ spec:
       volumes:
         - name: node-red-threejs-volume
           configMap:
-            name: {{ .Release.Name }}-configmap
+            name: {{ include "node-red-3d-dashboard.fullname" . }}-configmap
           persistentVolumeClaim:
             claimName: {{ .Values.persistence.claimName }}
       containers:
