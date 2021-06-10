@@ -30,10 +30,10 @@ spec:
       #Declare volume
       volumes:
         - name: node-red-threejs-volume
-          configMap:
-            name: flows-conf-file
           persistentVolumeClaim:
             claimName: {{ .Values.persistence.claimName }}
+            configMap:
+              name: flows-conf-file
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
