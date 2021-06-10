@@ -30,6 +30,8 @@ spec:
       #Declare volume
       volumes:
         - name: node-red-threejs-volume
+          configMap:
+            name: {{ .Release.Name }}-configmap
           persistentVolumeClaim:
             claimName: {{ .Values.persistence.claimName }}
       containers:

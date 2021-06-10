@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-configmap
+data:
+  custom-samples.json" |-
+{{ .Files.Get "flows.json" | indent 4 }}
