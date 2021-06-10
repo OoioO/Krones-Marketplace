@@ -31,7 +31,10 @@ spec:
       volumes:
         - name: node-red-threejs-volume
           configMap:
-            name: {{ .Release.Name }}-configmap
+            name: flows-conf-file
+            items:
+            - key: flows.json
+              path: flows.json
           persistentVolumeClaim:
             claimName: {{ .Values.persistence.claimName }}
       containers:
@@ -47,6 +50,7 @@ spec:
           # choose volume
           volumeMounts:
             - mountPath: /data
+              subPath: flows.json
               name: node-red-threejs-volume
           livenessProbe:
             httpGet:
