@@ -13,6 +13,18 @@ questions:
     description: "Hostname"
     type: string
     label: Hostname
+- variable: volumeExists
+  default: false
+  description: "Reclaim old volume"
+  type: boolean
+  label: existing volume 
+  group: "Storage Configuration"
+- variable: skipuninstall
+  default: false
+  description: "Delete storage after uninstalltion? (true==don't delete/false==delete)"
+  type: boolean
+  label: skip uninstall
+  group: "Storage Configuration"
 - variable: persistence.storage
   default: "4Gi"
   type: string
