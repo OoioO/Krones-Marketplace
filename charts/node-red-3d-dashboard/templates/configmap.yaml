@@ -3,5 +3,5 @@ kind: ConfigMap
 metadata:
   name: {{ .Release.Name }}-configmap
 data:
-  "flows.jso |-"
+  "flows.json |-"
 {{ .Files.Get "flows.json" | indent 4 }}
