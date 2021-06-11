@@ -299,6 +299,17 @@ entries:
     - https://github.com/AlbertHahn/Krones-Marketplace/releases/download/node-red-3d-dashboard-2.0.1/node-red-3d-dashboard-2.0.1.tgz
     version: 2.0.1
   - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2021-06-11T08:31:20.651296665Z"
+    description: Application for visualizing 3D data in a web interface provided through node-red
+    digest: d47c5671f4c23fda17f799cc39f55dc0161bf4eafe14e3ec7ce599c8e2986a6b
+    icon: https://alberthahn.github.io/node-red/img/node-red-logo-threejs.png
+    name: node-red-3d-dashboard
+    type: application
+    urls:
+    - https://github.com/AlbertHahn/Krones-Marketplace/releases/download/node-red-3d-dashboard-1.0.0/node-red-3d-dashboard-1.0.0.tgz
+    version: 1.0.0
+  - apiVersion: v2
     appVersion: 1.0.2
     created: "2021-05-25T09:32:07.958232208Z"
     description: Application for visualizing 3D data in a web interface provided through node-red
