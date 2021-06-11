@@ -18,7 +18,7 @@ imagePullSecrets: []
 #  paths:
 #    - path: /
 #  tls: []
-
+#ingress
 ingress:
   annotations: {}
   enabled: false
