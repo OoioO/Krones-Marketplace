@@ -21,7 +21,7 @@ imagePullSecrets: []
 #ingress
 ingress:
   annotations: {}
-  enabled: false
+  enabled: true
   hosts:
     - host: ""
       paths:

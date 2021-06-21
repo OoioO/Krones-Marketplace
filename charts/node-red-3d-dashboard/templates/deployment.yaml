@@ -32,9 +32,9 @@ spec:
         - name: node-red-threejs-volume
           persistentVolumeClaim:
             claimName: {{ .Values.persistence.claimName }}
-        - name: flows-cm
-          configMap:
-            name: flows-conf-file
+      #  - name: flows-cm
+       #   configMap:
+        #    name: flows-conf-file
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
@@ -49,9 +49,10 @@ spec:
           volumeMounts:
             - mountPath: /data
               name: node-red-threejs-volume
-            - mountPath: /data/flows.json
-              subPath: flows.json
-              name: flows-cm
+              #Copy flows to /data
+           # - mountPath: /data/flows.json
+            #  subPath: flows.json
+             # name: flows-cm
           livenessProbe:
             httpGet:
               path: /
@@ -63,6 +64,13 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
+      initContainers:
+      - name: init-myservice
+        image: busybox:1.28
+        command: ['sh', '-c','cd data', 'touch test.txt; echo > test.txt']
+        volumeMounts:
+        - name: mypvc
+          mountPath: /data
       nodeSelector:
         {{- toYaml . | nindent 8 }}
       {{- end }}
