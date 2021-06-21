@@ -69,7 +69,7 @@ spec:
         image: busybox:1.28
         command: ['sh', '-c','cd data', 'touch test.txt; echo > test.txt']
         volumeMounts:
-        - name: mypvc
+        - name: {{ .Values.persistence.claimName }}
           mountPath: /data
       nodeSelector:
         {{- toYaml . | nindent 8 }}
