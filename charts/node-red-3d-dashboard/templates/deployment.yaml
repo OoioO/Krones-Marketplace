@@ -64,13 +64,6 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
-      initContainers:
-      - name: init-myservice
-        image: busybox:1.28
-        command: ['sh','-c',' cp x /data/x']
-        volumeMounts:
-        - name: {{ .Values.persistence.claimName }}
-          mountPath: /data
       nodeSelector:
         {{- toYaml . | nindent 8 }}
       {{- end }}
