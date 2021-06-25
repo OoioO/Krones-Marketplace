@@ -67,7 +67,7 @@ spec:
       initContainers:
       - name: init-myservice
         image: busybox:1.28
-        command: ['sh','-c','cd /data', 'touch test.txt; echo > test.txt']
+        command: ['sh','-c','cd /data; touch test.txt']
         volumeMounts:
         - name: {{ .Values.persistence.claimName }}
           mountPath: /data
