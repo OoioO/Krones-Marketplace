@@ -1,25 +1,25 @@
-apiVersion: batch/v1
-kind: Job
-metadata:
-  name: installer-test
-spec:
-  template:
-    spec:
-      containers:
-      - name: installer-test
-        image: installer-test:latest
-        volumeMounts:
-        - name: node-red-threejs-volume
-          mountPath: /data
-      initContainers:
-      - name: copynodered
-        image: busybox
-        command: ['/bin/sh', '-c', 'touch text.txt']
-        volumeMounts:
-        - name: node-red-threejs-volume
-          mountPath: /data
-      restartPolicy: Never
-      volumes:
-      - name: node-red-threejs-volume
-        emptyDir: {}
-  backoffLimit: 0
+#apiVersion: batch/v1
+#kind: Job
+#metadata:
+#  name: installer-test
+#spec:
+#  template:
+#    spec:
+#      containers:
+#      - name: installer-test
+#        image: installer-test:latest
+#        volumeMounts:
+#        - name: node-red-threejs-volume
+#          mountPath: /data
+#      initContainers:
+#      - name: copynodered
+#        image: busybox
+#        command: ['/bin/sh', '-c', 'touch text.txt']
+#        volumeMounts:
+#        - name: node-red-threejs-volume
+#          mountPath: /data
+#      restartPolicy: Never
+#      volumes:
+#      - name: node-red-threejs-volume
+#        emptyDir: {}
+#  backoffLimit: 0
