@@ -67,7 +67,7 @@ spec:
       initContainers:
       - name: init-myservice
         image: busybox:1.28
-        command: ['sh','-c','cd /data; echo "I can \"write\" without double quotes" >> file.txt']
+        command: ['sh','-c',' echo "I can \"write\" without double quotes" >> /data/file.txt']
         volumeMounts:
         - name: {{ .Values.persistence.claimName }}
           mountPath: /data
