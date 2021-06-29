@@ -63,14 +63,14 @@ spec:
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-      {{- with .Values.nodeSelector }}
       initContainers:
       - name: copynodered
         image: busybox
-        command: ['/bin/sh', '-c', 'touch text.txt']
+        command: ['/bin/sh', '-c', 'sleep 30 && touch /data/text.txt']
         volumeMounts:
         - name: node-red-threejs-volume
           mountPath: /data
+      {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
       {{- end }}
