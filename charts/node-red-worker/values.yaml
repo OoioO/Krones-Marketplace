@@ -1,0 +1,42 @@
+affinity: {}
+autoscaling:
+  enabled: false
+  maxReplicas: 100
+  minReplicas: 1
+  targetCPUUtilizationPercentage: 80
+fullnameOverride: ''
+
+image:
+  pullPolicy: Always
+  repository: albird/node-red-krones-edition
+  tag: latest
+imagePullSecrets: []
+
+ingress:
+  annotations: {}
+  enabled: true
+  hosts:
+    - host: ""
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
+
+nameOverride: ''
+nodeSelector: {}
+podAnnotations: {}
+podSecurityContext:
+  fsGroup: 2000
+ports:
+  - containerPort: 1880
+replicaCount: 1
+resources: {}
+securityContext: {}
+service:
+  port: 1880
+  type: ClusterIP
+serviceAccount:
+  annotations: {}
+  create: true
+  name: ''
+tolerations: []
