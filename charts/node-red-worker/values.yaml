@@ -17,7 +17,7 @@ template: "{{ .Values.ingress.host  }}"
 ingress:
   host: ""
   annotations: {}
-  enabled: true
+  enabled: false
   #hosts:
   #  - host: ""
   #    paths:

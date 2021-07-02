@@ -10,7 +10,10 @@ kind: Ingress
 metadata:
   name: {{ $fullName }}
   labels:
-    {{- include "node-red-worker.labels" . | nindent 4 }}
+    app.kubernetes.io/name: {{ include "node-red.name" . }}
+    helm.sh/chart: {{ include "node-red.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
   {{- with .Values.ingress.annotations }}
   annotations:
     {{- toYaml . | nindent 4 }}
