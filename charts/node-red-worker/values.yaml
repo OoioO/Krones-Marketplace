@@ -12,7 +12,10 @@ image:
   tag: latest
 imagePullSecrets: []
 
+template: "{{ .Values.ingress.host  }}"
+
 ingress:
+  host: ""
   annotations: {}
   enabled: true
   hosts:
