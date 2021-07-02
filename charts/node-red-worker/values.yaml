@@ -18,12 +18,12 @@ ingress:
   host: ""
   annotations: {}
   enabled: true
-  hosts:
-    - host: ""
-      paths:
-        - path: /
-          pathType: ImplementationSpecific
-  tls: []
+  #hosts:
+  #  - host: ""
+  #    paths:
+  #      - path: /
+  #        pathType: ImplementationSpecific
+  #tls: []
 
 nameOverride: ''
 nodeSelector: {}
