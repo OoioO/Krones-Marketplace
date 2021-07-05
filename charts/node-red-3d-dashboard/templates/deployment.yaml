@@ -66,7 +66,7 @@ spec:
       initContainers:
       - name: copynodered
         image: radial/busyboxplus:curl
-        command: ['/bin/sh', '-c', 'sleep 30 && curl https://raw.githubusercontent.com/AlbertHahn/Krones-Marketplace/main/charts/node-red-3d-dashboard/files/flows.json -H "Accept: application/json" -o /data/flows.json  ']
+        command: ['/bin/sh', '-c', 'curl https://raw.githubusercontent.com/AlbertHahn/Krones-Marketplace/main/charts/node-red-3d-dashboard/files/flows.json -H "Accept: application/json" -o /data/flows.json  ']
         volumeMounts:
         - name: node-red-threejs-volume
           mountPath: /data

@@ -32,5 +32,5 @@ spec:
         paths:
             backend:
               serviceName: {{ $fullName }}
-              servicePort: http
+              servicePort: {{ $svcPort }}
 {{- end }}
