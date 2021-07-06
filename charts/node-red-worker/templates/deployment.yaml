@@ -62,6 +62,9 @@ spec:
       - name: copynodered
         image: radial/busyboxplus:curl
         command: ['/bin/sh', '-c', 'curl https://raw.githubusercontent.com/AlbertHahn/Krones-Marketplace/main/charts/node-red-3d-dashboard/files/flows_worker.json -H "Accept: application/json" -o /data/flows.json  ']
+        volumeMounts:
+        - name: {{ $root.Values.persistence.volumeName }}
+          mountPath: /data
       {{- with $root.Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
