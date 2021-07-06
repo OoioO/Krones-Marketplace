@@ -21,8 +21,8 @@ persistence:
   volumeName: node-red-labeler-volume
   accessModes:
     - ReadWriteOnce
-  storageClassName: longhorn
-  storage: 4Gi
+  storageClassName: local-path
+  storage: 1Gi
 
 
 ingress:
