@@ -16,7 +16,7 @@ workercounter: 1
 
 
 ingress:
-  host: "test"
+  host: ""
   annotations: {}
   enabled: true
 
