@@ -12,21 +12,14 @@ image:
   tag: latest
 imagePullSecrets: []
 
-#template: "{{ .Values.ingress.host  }}"
-
-workercounter: 2
+workercounter: 1
 
 
 ingress:
-  host: ""
+  host: "test"
   annotations: {}
-  enabled: false
-  #hosts:
-  #  - host: ""
-  #    paths:
-  #      - path: /
-  #        pathType: ImplementationSpecific
-  #tls: []
+  enabled: true
+
 
 nameOverride: ''
 nodeSelector: {}
