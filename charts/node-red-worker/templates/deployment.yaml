@@ -29,6 +29,11 @@ spec:
       serviceAccountName: {{ include "node-red-worker.serviceAccountName" $root }}
       securityContext:
         {{- toYaml $root.Values.podSecurityContext | nindent 8 }}
+      #Declare volume
+      volumes:
+        - name: {{ $root.Values.persistence.volumeName }}
+          persistentVolumeClaim:
+            claimName: {{ $root.Values.persistence.claimName }}
       containers:
         - name: {{ $root.Chart.Name }}
           securityContext:
@@ -39,6 +44,10 @@ spec:
             - name: http
               containerPort: 1880
               protocol: TCP
+          # choose volume
+          volumeMounts:
+            - mountPath: /data
+              name: {{ $root.Values.persistence.volumeName }}
           livenessProbe:
             httpGet:
               path: /
@@ -49,10 +58,10 @@ spec:
               port: http
           resources:
             {{- toYaml $root.Values.resources | nindent 12 }}
-      #initContainers:
-      #- name: copynodered
-      #  image: radial/busyboxplus:curl
-      #  command: ['/bin/sh', '-c', 'sleep 30 && curl https://raw.githubusercontent.com/AlbertHahn/Krones-Marketplace/main/charts/node-red-3d-dashboard/files/flows_worker.json -H "Accept: application/json" -o /data/flows.json  ']
+      initContainers:
+      - name: copynodered
+        image: radial/busyboxplus:curl
+        command: ['/bin/sh', '-c', 'curl https://raw.githubusercontent.com/AlbertHahn/Krones-Marketplace/main/charts/node-red-3d-dashboard/files/flows_worker.json -H "Accept: application/json" -o /data/flows.json  ']
       {{- with $root.Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

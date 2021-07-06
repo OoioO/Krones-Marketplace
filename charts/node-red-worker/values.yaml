@@ -14,6 +14,16 @@ imagePullSecrets: []
 
 workercounter: 1
 
+volumeExists: false
+skipuninstall: false
+persistence:
+  claimName: node-red-labeler-claimdata
+  volumeName: node-red-labeler-volume
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: longhorn
+  storage: 4Gi
+
 
 ingress:
   host: ""
