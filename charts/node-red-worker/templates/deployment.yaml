@@ -1,45 +1,43 @@
-{{- $root := . -}}
-{{- range until (int .Values.workercounter) }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "node-red-worker.fullname" $root }}-{{ . }}
+  name: {{ include "node-red-worker.fullname" . }}
   labels:
-    {{- include "node-red-worker.labels" $root | nindent 4 }}
+    {{- include "node-red-worker.labels" . | nindent 4 }}
 spec:
-  {{- if not $root.Values.autoscaling.enabled }}
-  replicas: {{ $root.Values.replicaCount }}
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
   {{- end }}
   selector:
     matchLabels:
-      {{- include "node-red-worker.selectorLabels" $root | nindent 6 }}
+      {{- include "node-red-worker.selectorLabels" . | nindent 6 }}
   template:
     metadata:
-      {{- with $root.Values.podAnnotations }}
+      {{- with .Values.podAnnotations }}
       annotations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "node-red-worker.selectorLabels" $root | nindent 8 }}
+        {{- include "node-red-worker.selectorLabels" . | nindent 8 }}
     spec:
-      {{- with $root.Values.imagePullSecrets }}
+      {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "node-red-worker.serviceAccountName" $root }}
+      serviceAccountName: {{ include "node-red-worker.serviceAccountName" . }}
       securityContext:
-        {{- toYaml $root.Values.podSecurityContext | nindent 8 }}
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
       #Declare volume
       volumes:
-        - name: {{ $root.Values.persistence.volumeName }}
+        - name: {{ .Values.persistence.volumeName }}
           persistentVolumeClaim:
-            claimName: {{ $root.Values.persistence.claimName }}
+            claimName: {{ .Values.persistence.claimName }}
       containers:
-        - name: {{ $root.Chart.Name }}
+        - name: {{ .Chart.Name }}
           securityContext:
-            {{- toYaml $root.Values.securityContext | nindent 12 }}
-          image: "{{ $root.Values.image.repository }}:{{ $root.Values.image.tag | default $root.Chart.AppVersion }}"
-          imagePullPolicy: {{ $root.Values.image.pullPolicy }}
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
               containerPort: 1880
@@ -47,7 +45,7 @@ spec:
           # choose volume
           volumeMounts:
             - mountPath: /data
-              name: {{ $root.Values.persistence.volumeName }}
+              name: {{ .Values.persistence.volumeName }}
           livenessProbe:
             httpGet:
               path: /
@@ -57,24 +55,23 @@ spec:
               path: /
               port: http
           resources:
-            {{- toYaml $root.Values.resources | nindent 12 }}
+            {{- toYaml .Values.resources | nindent 12 }}
       initContainers:
       - name: copynodered
         image: radial/busyboxplus:curl
         command: ['/bin/sh', '-c', 'curl https://raw.githubusercontent.com/AlbertHahn/Krones-Marketplace/main/charts/node-red-3d-dashboard/files/flows_worker.json -H "Accept: application/json" -o /data/flows.json  ']
         volumeMounts:
-        - name: {{ $root.Values.persistence.volumeName }}
+        - name: {{ .Values.persistence.volumeName }}
           mountPath: /data
-      {{- with $root.Values.nodeSelector }}
+      {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      {{- with $root.Values.affinity }}
+      {{- with .Values.affinity }}
       affinity:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      {{- with $root.Values.tolerations }}
+      {{- with .Values.tolerations }}
       tolerations:
         {{- toYaml . | nindent 8 }}
-      {{- end }}
       {{- end }}
