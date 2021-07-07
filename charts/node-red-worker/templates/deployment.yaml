@@ -59,7 +59,7 @@ spec:
       initContainers:
       - name: copynodered
         image: radial/busyboxplus:curl
-        command: ['/bin/sh', '-c', 'curl https://raw.githubusercontent.com/AlbertHahn/Krones-Marketplace/main/charts/node-red-3d-dashboard/files/flows_worker.json -H "Accept: application/json" -o /data/flows.json  ']
+        command: ['/bin/sh', '-c', 'curl {{ tpl .Values.nodered.flow . | quote }} -H "Accept: application/json" -o /data/flows.json  ']
         volumeMounts:
         - name: {{ .Values.persistence.volumeName }}
           mountPath: /data

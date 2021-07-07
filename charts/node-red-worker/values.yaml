@@ -30,6 +30,8 @@ ingress:
   annotations: {}
   enabled: true
 
+nodered:
+  flow: ""
 
 nameOverride: ''
 nodeSelector: {}
