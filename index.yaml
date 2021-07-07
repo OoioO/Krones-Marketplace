@@ -235,6 +235,16 @@ entries:
   node-red-worker:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2021-07-07T09:30:10.473122718Z"
+    description: A Helm chart for Kubernetes
+    digest: 2492caf120d8c542b30a9be248a6c0a8d0155776e22817120636050969ca1dd5
+    name: node-red-worker
+    type: application
+    urls:
+    - https://github.com/AlbertHahn/Krones-Marketplace/releases/download/node-red-worker-1.16.0/node-red-worker-1.16.0.tgz
+    version: 1.16.0
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2021-07-06T14:21:11.122662956Z"
     description: A Helm chart for Kubernetes
     digest: f071508347e4b071ff0a8bb5aac3c0e749483840230279d5f93671360aba52c9
