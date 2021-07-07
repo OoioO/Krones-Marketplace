@@ -17,11 +17,11 @@ workercounter: 1
 volumeExists: false
 skipuninstall: false
 persistence:
-  claimName: node-red-labeler-claimdata
-  volumeName: node-red-labeler-volume
+  claimName: node-red-worker-claimdata
+  volumeName: node-red-worker-volume
   accessModes:
     - ReadWriteOnce
-  storageClassName: local-path
+  storageClassName: longhorn
   storage: 1Gi
 
 

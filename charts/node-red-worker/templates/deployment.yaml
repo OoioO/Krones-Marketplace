@@ -29,9 +29,9 @@ spec:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       #Declare volume
       volumes:
-        - name: {{ .Values.persistence.volumeName }}
+        - name: {{ tpl .Values.persistence.volumeName . | quote }}
           persistentVolumeClaim:
-            claimName: {{ .Values.persistence.claimName }}
+            claimName: {{ tpl .Values.persistence.claimName . | quote }}
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
@@ -45,7 +45,7 @@ spec:
           # choose volume
           volumeMounts:
             - mountPath: /data
-              name: {{ .Values.persistence.volumeName }}
+              name: {{ tpl .Values.persistence.volumeName . | quote }}
           livenessProbe:
             httpGet:
               path: /
@@ -61,7 +61,7 @@ spec:
         image: radial/busyboxplus:curl
         command: ['/bin/sh', '-c', 'curl {{ tpl .Values.nodered.flow . | quote }} -H "Accept: application/json" -o /data/flows.json  ']
         volumeMounts:
-        - name: {{ .Values.persistence.volumeName }}
+        - name: {{ tpl .Values.persistence.volumeName . | quote }}
           mountPath: /data
       {{- with .Values.nodeSelector }}
       nodeSelector:
