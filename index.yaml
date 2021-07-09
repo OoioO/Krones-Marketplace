@@ -14,6 +14,17 @@ entries:
   node-red-3d-dashboard:
   - apiVersion: v2
     appVersion: 0.1.0
+    created: "2021-07-09T11:09:12.923824704Z"
+    description: Application for visualizing 3D data in a web interface provided through node-red
+    digest: 2ff7819e52e9e7c7f357086678fc550c260a14c66736b95ea239dca38aed6fb3
+    icon: https://alberthahn.github.io/node-red/img/node-red-logo-threejs.png
+    name: node-red-3d-dashboard
+    type: application
+    urls:
+    - https://github.com/AlbertHahn/Krones-Marketplace/releases/download/node-red-3d-dashboard-1.2.1/node-red-3d-dashboard-1.2.1.tgz
+    version: 1.2.1
+  - apiVersion: v2
+    appVersion: 0.1.0
     created: "2021-07-06T13:40:28.98872503Z"
     description: Application for visualizing 3D data in a web interface provided through node-red
     digest: 514b0cd0a7aacf2525f2f6126b13a9fe73528db76cb9dc3721517b2b200614c9
@@ -233,16 +244,6 @@ entries:
     - https://github.com/AlbertHahn/Krones-Marketplace/releases/download/node-red-3d-dashboard-1.0.0/node-red-3d-dashboard-1.0.0.tgz
     version: 1.0.0
   node-red-worker:
-  - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2021-07-09T11:08:58.101101624Z"
-    description: A Helm chart for Kubernetes
-    digest: e24e83e0a28c1e38fec1d7c2fbe08cc059dcef56ef33c90128ec45c330c089fb
-    name: node-red-worker
-    type: application
-    urls:
-    - https://github.com/AlbertHahn/Krones-Marketplace/releases/download/node-red-worker-1.18.0/node-red-worker-1.18.0.tgz
-    version: 1.18.0
   - apiVersion: v2
     appVersion: 1.16.0
     created: "2021-07-07T10:00:24.814446399Z"
