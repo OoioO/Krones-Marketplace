@@ -395,6 +395,16 @@ entries:
     version: 1.0.0
   telegram-observer:
   - apiVersion: v2
+    appVersion: latest
+    created: "2021-07-09T08:07:54.049623968Z"
+    description: A Helm chart for Kubernetes
+    digest: d066d343442223f956504989b107223939cc48268b5631066ea5dda7c20eb70e
+    name: telegram-observer
+    type: application
+    urls:
+    - https://github.com/AlbertHahn/Krones-Marketplace/releases/download/telegram-observer-0.2.0/telegram-observer-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
     appVersion: 1.16.0
     created: "2021-07-09T07:50:04.014468274Z"
     description: A Helm chart for Kubernetes
