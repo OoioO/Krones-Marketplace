@@ -50,4 +50,3 @@ serviceAccount:
   annotations: {}
   create: true
   name: ''
-tolerations: []
