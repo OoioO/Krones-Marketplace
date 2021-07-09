@@ -393,4 +393,15 @@ entries:
     urls:
     - https://github.com/AlbertHahn/Krones-Marketplace/releases/download/node-red-worker-1.0.0/node-red-worker-1.0.0.tgz
     version: 1.0.0
+  telegram-observer:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2021-07-09T07:50:04.014468274Z"
+    description: A Helm chart for Kubernetes
+    digest: 6af42eecbc4537d23304599615b3980b0d88cea6c7913c62f94d99414640e310
+    name: telegram-observer
+    type: application
+    urls:
+    - https://github.com/AlbertHahn/Krones-Marketplace/releases/download/telegram-observer-0.1.0/telegram-observer-0.1.0.tgz
+    version: 0.1.0
 generated: "2021-06-11T09:18:12.591722343Z"
